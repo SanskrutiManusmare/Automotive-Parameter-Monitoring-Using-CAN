@@ -56,7 +56,7 @@ The system follows a **distributed architecture**:
 - LPC2129 (ARM7 Microcontroller)
 - MCP2551 CAN Transceiver
 - DS18B20 Temperature Sensor
-- 16x2 LCD (JHD 204A)
+- 20x4 LCD 
 - Fuel Sensor (Analog via ADC)
 - LEDs (Indicators)
 - Switches
@@ -75,44 +75,34 @@ The system follows a **distributed architecture**:
 
 ## 📂 Project Structure
 
-Automotive-Parameter-Monitoring-Using-CAN/
-│
-├── MAIN_NODE/
-│   ├── main_node.c
-│   ├── ds18b20.c
-│   ├── ds18b20.h
-│   └── main_node.uvproj
-│
-├── FUEL_NODE/
-│   ├── fuel_node.c
-│   ├── adc.c
-│   ├── adc.h
-│   └── fuel_node.uvproj
-│
-├── INDICATOR_NODE/
-│   ├── indicator_node.c
-│   └── indicator_node.uvproj
-│
-├── DRIVERS/
-│   ├── can.c
-│   ├── can.h
-│   ├── lcd.c
-│   ├── lcd.h
-│   ├── delay.c
-│   ├── delay.h
-│   └── types.h
-│
-├── STARTUP/
-│   ├── startup.s          # ARM startup file
-│   └── system.c           # system initialization (PLL, clock)
-│
-├── BUILD/
-│   ├── main_node.hex
-│   ├── fuel_node.hex
-│   └── indicator_node.hex
-│
-└── README.md
-
+MAJOR_PROJECT/
+├── MainNode.c
+├── FuelNode.c
+├── IndicatorNode.c
+├── can.c
+├── can.h
+├── can_defines.h
+├── ds18b20.c
+├── ds18b20.h
+├── lcd.c
+├── lcd.h
+├── lcd_defines.h
+├── FUEL_adc.c
+├── fuel_adc.h
+├── fuel_defines.h
+├── INDICATOR.c
+├── indicator.h
+├── EXINT.c
+├── delay.c
+├── delay.h
+├── defines.h
+├── types.h
+├── Startup.s
+├── system.c
+├── major.uvproj
+├── MAIN_NODE.hex
+├── FUEL_NODE.hex
+└── IND_NODE.hex
 ---
 
 ## 🚀 Getting Started
@@ -196,6 +186,7 @@ Automotive-Parameter-Monitoring-Using-CAN/
 ## 👨‍💻 Author
 
 **Sanskruti Manusmare**-Embedded Systems Major Project
-Platform-Vector India's LPC2129 CAN Node Board|Keil µVision|Flash Magic
+
+**Platform**-Vector India's LPC2129 CAN Node Board|Keil µVision|Flash Magic
 
 ---
