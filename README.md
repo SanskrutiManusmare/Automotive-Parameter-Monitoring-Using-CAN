@@ -74,6 +74,9 @@ The system follows a **distributed architecture**:
 ---
 
 ## 📂 Project Structure
+## 📁 Project Structure
+
+```
 MAJOR_PROJECT/
     ├── MAIN_NODE.c          # Main node: LCD display + CAN hub
     ├── FUEL_NODE.c          # Fuel sensor node: ADC → CAN TX
@@ -96,7 +99,9 @@ MAJOR_PROJECT/
     ├── MAIN_NODE.hex        # Compiled firmware — flash to Main Node board
     ├── FUEL_NODE.hex        # Compiled firmware — flash to Fuel Node board
     └── IND_NODE.hex         # Compiled firmware — flash to Indicator Node board
+```
 
+---
 MAJOR_PROJECT/
 ├── MainNode.c
 ├── FuelNode.c
