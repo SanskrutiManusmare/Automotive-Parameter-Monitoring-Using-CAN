@@ -74,6 +74,28 @@ The system follows a **distributed architecture**:
 ---
 
 ## 📂 Project Structure
+MAJOR_PROJECT/
+    ├── MAIN_NODE.c          # Main node: LCD display + CAN hub
+    ├── FUEL_NODE.c          # Fuel sensor node: ADC → CAN TX
+    ├── INDICATOR_NODE.c     # Indicator node: CAN RX → LED blinker
+    ├── CAN.c / can.h        # CAN bus driver (init, TX, RX)
+    ├── can_defines.h        # CAN register & bit definitions
+    ├── ds18b20.c / .h       # DS18B20 1-Wire temperature driver
+    ├── MMA_7660.c / .h      # MMA7660 accelerometer I2C driver
+    ├── LCD.c / lcd.h        # 20×4 LCD character driver
+    ├── lcd_defines.h        # LCD command constants
+    ├── I2C.c / i2c.h        # Bit-bang I2C master driver
+    ├── INDICATOR.c / .h     # LED indicator step logic (left/right/off)
+    ├── INDICATOR_GEN.c      # Indicator pattern generator
+    ├── FUEL.c / fuel.h      # Fuel ADC read & scaling logic
+    ├── delay.c / delay.h    # Microsecond / millisecond software delay
+    ├── defines.h            # Bit manipulation macros (SETBIT, CLRBIT, etc.)
+    ├── types.h              # Typedefs: u8, u32, s8, f32, etc.
+    ├── Startup.s            # ARM7 reset & vector table (assembly)
+    ├── major.uvproj         # Keil µVision project file
+    ├── MAIN_NODE.hex        # Compiled firmware — flash to Main Node board
+    ├── FUEL_NODE.hex        # Compiled firmware — flash to Fuel Node board
+    └── IND_NODE.hex         # Compiled firmware — flash to Indicator Node board
 
 MAJOR_PROJECT/
 ├── MainNode.c
