@@ -73,63 +73,34 @@ The system follows a **distributed architecture**:
 
 ---
 
-## 📂 Project Structure
 ## 📁 Project Structure
 
 ```
 MAJOR_PROJECT/
-    ├── MAIN_NODE.c          # Main node: LCD display + CAN hub
-    ├── FUEL_NODE.c          # Fuel sensor node: ADC → CAN TX
-    ├── INDICATOR_NODE.c     # Indicator node: CAN RX → LED blinker
-    ├── CAN.c / can.h        # CAN bus driver (init, TX, RX)
+    ├── MainNode.c          # Main node: LCD display + CAN hub
+    ├── FuelNode.c          # Fuel sensor node: ADC → CAN TX
+    ├── IndicatorNode.c     # Indicator node: CAN RX → LED blinker
+    ├── can.c / can.h        # CAN bus driver (init, TX, RX)
     ├── can_defines.h        # CAN register & bit definitions
     ├── ds18b20.c / .h       # DS18B20 1-Wire temperature driver
-    ├── MMA_7660.c / .h      # MMA7660 accelerometer I2C driver
-    ├── LCD.c / lcd.h        # 20×4 LCD character driver
+    ├── lcd.c / lcd.h        # 20×4 LCD character driver
     ├── lcd_defines.h        # LCD command constants
-    ├── I2C.c / i2c.h        # Bit-bang I2C master driver
+    ├── FUEl.c / fuel.h      # Bit-bang I2C master drive
     ├── INDICATOR.c / .h     # LED indicator step logic (left/right/off)
-    ├── INDICATOR_GEN.c      # Indicator pattern generator
+    ├── EXINT.c              # External Interrupt 
     ├── FUEL.c / fuel.h      # Fuel ADC read & scaling logic
+    ├── fuel_defines.        # ADC defines 
     ├── delay.c / delay.h    # Microsecond / millisecond software delay
     ├── defines.h            # Bit manipulation macros (SETBIT, CLRBIT, etc.)
     ├── types.h              # Typedefs: u8, u32, s8, f32, etc.
     ├── Startup.s            # ARM7 reset & vector table (assembly)
     ├── major.uvproj         # Keil µVision project file
-    ├── MAIN_NODE.hex        # Compiled firmware — flash to Main Node board
-    ├── FUEL_NODE.hex        # Compiled firmware — flash to Fuel Node board
-    └── IND_NODE.hex         # Compiled firmware — flash to Indicator Node board
+    ├── MAINNODE.hex        # Compiled firmware — flash to Main Node board
+    ├── FUELNODE.hex        # Compiled firmware — flash to Fuel Node board
+    └── INDNODE.hex         # Compiled firmware — flash to Indicator Node board
 ```
 
----
-MAJOR_PROJECT/
-├── MainNode.c
-├── FuelNode.c
-├── IndicatorNode.c
-├── can.c
-├── can.h
-├── can_defines.h
-├── ds18b20.c
-├── ds18b20.h
-├── lcd.c
-├── lcd.h
-├── lcd_defines.h
-├── FUEL_adc.c
-├── fuel_adc.h
-├── fuel_defines.h
-├── INDICATOR.c
-├── indicator.h
-├── EXINT.c
-├── delay.c
-├── delay.h
-├── defines.h
-├── types.h
-├── Startup.s
-├── system.c
-├── major.uvproj
-├── MAIN_NODE.hex
-├── FUEL_NODE.hex
-└── IND_NODE.hex
+
 ---
 
 ## 🚀 Getting Started
